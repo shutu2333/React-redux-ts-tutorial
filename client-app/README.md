@@ -1,5 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+
+## Examples covered:
+
+- Redux Toolkit with TS
+- data fetch with createAsyncThunk: `src/views/login`
+- data fetch with Redux Toolkit's "RTK Query": `src/views/dogs`
+- highlights of redux-too
+
+![redux-tookit](/client-app//WX20220405-153846%402x.png "redux")
+
 ## Available Scripts
 
 In the project directory, you can run:
