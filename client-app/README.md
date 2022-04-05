@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Redux Toolkit with TS
 - data fetch with createAsyncThunk: `src/views/login`
 - data fetch with Redux Toolkit's "RTK Query": `src/views/dogs`
-- highlights of redux-too
+- highlights of redux-toolkit
 
 ![redux-tookit](/client-app//WX20220405-153846%402x.png "redux")
 
