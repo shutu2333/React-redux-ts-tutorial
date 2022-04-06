@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Examples covered:
 
-- Redux Toolkit with TS
+- Redux Toolkit with TS, basic usage: `src/views/doge-counter`
 - data fetch with createAsyncThunk: `src/views/login`
 - data fetch with Redux Toolkit's "RTK Query": `src/views/dogs`
 - highlights of redux-toolkit

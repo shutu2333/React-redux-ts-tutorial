@@ -3,6 +3,8 @@ import { useFetchDogBreedsQuery } from "./dogs-slice";
 
 export const DogList = () => {
   const [limit, setLimit] = useState(5);
+
+  // Using a query hook automatically fetches data and returns query values
   const { data, error, isLoading, isFetching } = useFetchDogBreedsQuery(limit);
 
   return (

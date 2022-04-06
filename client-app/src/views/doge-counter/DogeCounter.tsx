@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { RootState } from "../../app/store";
-import { useSelector, useDispatch } from "react-redux";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { decrement, increment, incrementByAmount } from "./doge-counter-slice";
 
 export function DogeCounter() {
-  const count = useSelector((state: RootState) => state.dogeCounter.value);
-  const dispatch = useDispatch();
+  const count = useAppSelector(state => state.dogeCounter.value);
+  const dispatch = useAppDispatch();
   const [incrementAmount, setIncrementAmount] = useState(2);
 
   return (

@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import { RootState } from "../../app/store";
-import { fetchUserLoginAsync, updateUserName } from "./login-slice";
+import { fetchUserLoginAsync } from "./login-slice";
 
 export function Login() {
-  const loading = useAppSelector((state: RootState) => state.login.loading);
-  const error = useAppSelector((state: RootState) => state.login.error);
-  const isAuthenticated = useAppSelector((state: RootState) => !!state.login.token)
+  const loading = useAppSelector(state => state.login.loading);
+  const error = useAppSelector(state => state.login.error);
+  const isAuthenticated = useAppSelector(state => !!state.login.token)
   
   const dispatch = useAppDispatch();
 
@@ -43,7 +41,6 @@ export function Login() {
       <button
         onClick={() => {
           dispatch(fetchUserLoginAsync({ username, password }));
-          dispatch(updateUserName(username));
         }}
       >
         login
@@ -51,7 +48,7 @@ export function Login() {
 
       {error && <div>Error: {error}</div>}
       {loading && <div>Loading...</div>}
-      {isAuthenticated && <Navigate to="/dogs" replace />}
+      {isAuthenticated && <div>Login success</div>}
     </div>
   );
 }
