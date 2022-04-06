@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { useFetchDogBreedsQuery } from "./dogs-slice";
+import { useGetRoleFamilyQuery } from './grpc-poc';
 
 export const DogList = () => {
   const [limit, setLimit] = useState(5);
 
   // Using a query hook automatically fetches data and returns query values
   const { data, error, isLoading, isFetching } = useFetchDogBreedsQuery(limit);
+
+  const { data: testData, error: testErr } = useGetRoleFamilyQuery(1);
+
+  // console.log(testData, testErr)
 
   return (
     <div style={{ width: "50%", margin: "0 auto" }}>

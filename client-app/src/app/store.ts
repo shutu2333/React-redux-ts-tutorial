@@ -2,6 +2,7 @@ import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import dogeCounterReducer from "../views/doge-counter/doge-counter-slice";
 import loginReducer from "../views/login/login-slice";
 import { dogsApiSlice } from "../views/dogs/dogs-slice";
+import { roleFamilySlice } from "../views/dogs/grpc-poc"
 
 
 export const store = configureStore({
@@ -11,11 +12,12 @@ export const store = configureStore({
     login: loginReducer,
     // Add the generated reducer as a specific top-level slice
     [dogsApiSlice.reducerPath]: dogsApiSlice.reducer,
+    [roleFamilySlice.reducerPath]: roleFamilySlice.reducer
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
   middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(dogsApiSlice.middleware),
+    getDefaultMiddleware().concat(dogsApiSlice.middleware, roleFamilySlice.middleware),
 });
 
 

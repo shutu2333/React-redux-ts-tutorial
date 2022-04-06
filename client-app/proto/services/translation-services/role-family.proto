@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "common/role-family.proto";
+
+package faethm.querydomain.translationservices;
+
+
+message RoleFamilyRequest {
+    faethm.querydomain.common.rolefamily.RoleFamilyCode roleFamily = 1;
+}
+
+message RoleFamilyResponse {
+    faethm.querydomain.common.rolefamily.RoleFamilyCode roleFamily = 1;
+    string category = 2;
+}
+
+message RoleFamilyStreamRequest {
+    repeated RoleFamilyRequest roleFamilyRequests = 1;
+}
+
+service RoleFamily {
+    rpc GetRoleFamily(RoleFamilyRequest) returns (RoleFamilyResponse);
+    rpc GetRoleFamilyStream(RoleFamilyStreamRequest) returns (stream RoleFamilyResponse);
+    rpc GetRoleFamilyBidi(stream RoleFamilyRequest) returns (stream RoleFamilyResponse);
+}
